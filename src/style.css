@@ -1,0 +1,9 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Itim";
+    src: url("@/assets/fonts/Itim-Regular.ttf") format("truetype");
+}
