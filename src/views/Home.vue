@@ -6,7 +6,7 @@ import MegaMeat from '@/assets/megaMeat.png';
 import MeatPasta from '@/assets/meatPasta.png';
 import SchoolCombo from '@/assets/schoolCombo.png';
 import DoubleMeat from '@/assets/DoubleMeat.png'; 
-import Promotion from '@/assets/Promotion.png';
+import Promotion from '@/assets/promotion.png';
 
 
 
