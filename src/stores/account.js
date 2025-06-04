@@ -18,7 +18,7 @@ export const useAccountStore = defineStore("account", {
             const headers = { Authorization: `Bearer ${token}` };
             try {
               const userInfos = await axios.post(
-                "http://localhost:3000/userinfo",
+                "https://ecommerce-backend-ig7w.onrender.com/userinfo",
                 {},
                 { headers }
               );
@@ -36,7 +36,7 @@ export const useAccountStore = defineStore("account", {
     },
     async register(username, email, password) {
       try {
-        const results = await axios.post("http://localhost:3000/register", {
+        const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/register", {
           username,
           email,
           password,
@@ -47,7 +47,7 @@ export const useAccountStore = defineStore("account", {
     },
     async login(email, password) {
       try {
-        const results = await axios.post("http://localhost:3000/login", {
+        const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/login", {
           email,
           password,
         });
@@ -55,7 +55,7 @@ export const useAccountStore = defineStore("account", {
           this.isLoggedIn = true;
           localStorage.setItem("token", results.data.token);
           const userData = await axios.post(
-            "http://localhost:3000/userinfo",
+            "https://ecommerce-backend-ig7w.onrender.com/userinfo",
             {},
             {
               headers: {
@@ -76,7 +76,7 @@ export const useAccountStore = defineStore("account", {
     },
     async updateUser(username) {
       try {
-        const results = await axios.post("http://localhost:3000/insert_username", {
+        const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/insert_username", {
           username,
         },
         {
@@ -93,7 +93,7 @@ export const useAccountStore = defineStore("account", {
 
     async updatePhone(phone) {
       try {
-        const results = await axios.post("http://localhost:3000/insert_phone", {
+        const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/insert_phone", {
           phone,
         },
         {
@@ -110,7 +110,7 @@ export const useAccountStore = defineStore("account", {
 
       async updateAddress(name, lastname , address, phoneads) {
         try {
-          const results = await axios.post("http://localhost:3000/insert_address", {
+          const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/insert_address", {
             name,
             lastname,
             address,
@@ -130,7 +130,7 @@ export const useAccountStore = defineStore("account", {
       
      async removeAddress() {
         try {
-          const results = await axios.post("http://localhost:3000/delete_address", {
+          const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/delete_address", {
           },
           {
             headers: {

@@ -31,7 +31,7 @@ onMounted(() => {
     <Table :headers="['Image', 'Name', 'Price', 'About', 'Status', 'Updated At', '']">
           <tr v-for="(product, index) in adminProductStore.products">
             <td>
-              <img :src="product.imageUrl" class="w-24 h-24 object-contain" />
+              <img :src="`https://ecommerce-backend-ig7w.onrender.com/${product.imageUrl}`" class="w-24 h-24 object-contain" />
             </td>
             <th>{{ product.name }}</th>
             <td>{{ product.price }}</td>

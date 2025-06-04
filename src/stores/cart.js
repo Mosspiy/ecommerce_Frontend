@@ -23,7 +23,7 @@ export const useCartStore = defineStore("cart", {
     async loadCart() {
       try {
         const results = await axios.post(
-          "http://localhost:3000/get_cart",
+          "https://ecommerce-backend-ig7w.onrender.com/get_cart",
           {},
           {
             headers: {
@@ -32,7 +32,7 @@ export const useCartStore = defineStore("cart", {
           }
         );
         results.data.forEach((item) => {
-          item.imageUrl = `http://localhost:3000/${item.imageUrl}`;
+          item.imageUrl = `https://ecommerce-backend-ig7w.onrender.com/${item.imageUrl}`;
         });
         this.items = results.data;
       } catch (error) {
@@ -42,7 +42,7 @@ export const useCartStore = defineStore("cart", {
     async addToCart(product) {
       try {
         const res = await axios.post(
-          "http://localhost:3000/add_to_cart",
+          "https://ecommerce-backend-ig7w.onrender.com/add_to_cart",
           product,
           {
             headers: {
@@ -58,7 +58,7 @@ export const useCartStore = defineStore("cart", {
     async updateQuantity(product_id, quantity) {
       try {
         await axios.put(
-          "http://localhost:3000/update_cart",
+          "https://ecommerce-backend-ig7w.onrender.com/update_cart",
           {
             product_id,
             quantity,
@@ -76,7 +76,7 @@ export const useCartStore = defineStore("cart", {
     },
     async removeFromCart(product_id) {
       try {
-        await axios.delete("http://localhost:3000/delete_cart", {
+        await axios.delete("https://ecommerce-backend-ig7w.onrender.com/delete_cart", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
           data: { product_id },
         });
@@ -88,7 +88,7 @@ export const useCartStore = defineStore("cart", {
     async checkout() {
       try {
         const results = await axios.post(
-          "http://localhost:3000/insert_order",
+          "https://ecommerce-backend-ig7w.onrender.com/insert_order",
           { total: this.summeryPrice },
           {
             headers: {

@@ -42,7 +42,7 @@ const handleRegister = async () => {
       });
       return;
     }
-    const results = await axios.post("http://localhost:3000/register", {
+    const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/register", { 
       username: username.value,
       email: email.value,
       password: password.value,

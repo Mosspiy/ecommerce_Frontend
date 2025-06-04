@@ -48,13 +48,13 @@ const checkOut = () => {
   const lastName = AccountStore.user.lastname;
   const phone = AccountStore.user.phoneads;
 
-  // if (!address || !firstName || !lastName || !phone) {
-  //   Toast.fire({
-  //     icon: "error",
-  //     title: "กรุณากรอกข้อมูลให้ครบถ้วน",
-  //   })
-  //   return;
-  // }
+  if (!address || !firstName || !lastName || !phone) {
+    Toast.fire({
+      icon: "error",
+      title: "กรุณากรอกข้อมูลให้ครบถ้วน",
+    })
+    return;
+  }
   CartStore.checkout();
 };
 

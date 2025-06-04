@@ -180,7 +180,7 @@ function toggleFavorite(index) {
             class="card w-30 bg-white shadow-xl"
           >
             <img
-              :src="product.imageUrl"
+              :src="`https://ecommerce-backend-ig7w.onrender.com/${product.imageUrl}`"
               alt="Product Image"
               class="w-full h-60 object-cover rounded-t-lg"
             />
@@ -202,7 +202,7 @@ function toggleFavorite(index) {
                   <div class="modal-box max-w-6xl">
                     <div class="flex justify-start items-center">
                     <button @click="closeAddons(index)" class="btn btn-ghost mr-2 justify-start">
-                    <div class="text-lg font-bold text-[#316f3f] ">< {{ product.name }}</div>
+                    <div class="text-lg font-bold text-[#316f3f] "> {{ product.name }}</div>
                     </button>
                     </div>
                     <div class="divider"></div>
@@ -212,7 +212,7 @@ function toggleFavorite(index) {
                   </div>
                     <div class="flex w-full">
                     <img
-                      :src="product.imageUrl"
+                      :src="`https://ecommerce-backend-ig7w.onrender.com/${product.imageUrl}`"
                       alt="Product Image"
                       class="w-1/2 h-1/4 object-contain p-5"
                     />

@@ -10,7 +10,7 @@ export const useAdminProductStore = defineStore("admin-product", {
     actions: {
         async loadProducts() {
           try {
-            const response = await axios.get("http://localhost:3000/products");
+            const response = await axios.get("https://ecommerce-backend-ig7w.onrender.com/products/");
             this.products = response.data;
             this.loaded = true;
           } catch (error) {
@@ -19,7 +19,7 @@ export const useAdminProductStore = defineStore("admin-product", {
         },
         async getProduct(product_id) {
             try {
-              const results = await axios.post(`http://localhost:3000/get_item`, {
+              const results = await axios.post(`https://ecommerce-backend-ig7w.onrender.com/get_item`, {
                 product_id,
               });
               return results.data;
@@ -30,7 +30,7 @@ export const useAdminProductStore = defineStore("admin-product", {
           async addProduct(productData) {
             try {
               await axios.post(
-                "http://localhost:3000/insert_item",
+                "https://ecommerce-backend-ig7w.onrender.com/insert_item",
                 productData,
                 {
                   headers: {
@@ -47,7 +47,7 @@ export const useAdminProductStore = defineStore("admin-product", {
           async updateProduct(id, productData) {
             try {
               const response = await axios.put( // เก็บค่าตอบกลับจากการเรียก API
-                `http://localhost:3000/update_item/${id}`,
+                `https://ecommerce-backend-ig7w.onrender.com/update_item/${id}`,
                 productData,
                 {
                   headers: {
@@ -70,7 +70,7 @@ export const useAdminProductStore = defineStore("admin-product", {
           },
           async removeProduct(product_id) {
             try {
-              await axios.delete(`http://localhost:3000/delete_item`, { data: { product_id } });
+              await axios.delete(`https://ecommerce-backend-ig7w.onrender.com/delete_item`, { data: { product_id } });
               await this.loadProducts();
             } catch (error) {
               console.error(error);

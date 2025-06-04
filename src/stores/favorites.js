@@ -13,7 +13,7 @@ const favorites = ref([]);
 // ฟังก์ชันสำหรับบันทึกสินค้าลงในฐานข้อมูล
 const saveFavoriteToDatabase = async (productId, isFavorite) => {
   try {
-    await axios.post('/api/favorites', {
+    await axios.post('https://ecommerce-backend-ig7w.onrender.com/favorites', {
       productId: productId,
       isFavorite: isFavorite,
     });

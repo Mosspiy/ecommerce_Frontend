@@ -9,7 +9,7 @@ export const useAdminOrderStore = defineStore("admin-order", {
   actions: {
     async loadOrders() {
       const results = await axios.post(
-        "http://localhost:3000/get_order",
+        "https://ecommerce-backend-ig7w.onrender.com/get_order",
         {},
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -18,11 +18,11 @@ export const useAdminOrderStore = defineStore("admin-order", {
       this.orders = results.data;
     },
     async loadOrdersAdmin() {
-      const results = await axios.post("http://localhost:3000/get_all_order");
+      const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/get_all_order");
       this.orders = results.data;
     },
     async getOrderDetail(order_id) {
-      const results = await axios.post("http://localhost:3000/get_order_id", {
+      const results = await axios.post("https://ecommerce-backend-ig7w.onrender.com/get_order_id", {
         order_id,
       });
       this.orderDetail = results.data;
@@ -30,7 +30,7 @@ export const useAdminOrderStore = defineStore("admin-order", {
     },
     async updateOrderStatus(order_id, status) {
       try {
-        await axios.post("http://localhost:3000/update_order_status", {
+        await axios.post("https://ecommerce-backend-ig7w.onrender.com/update_order_status", {
           order_id,
           status,
         });
@@ -40,7 +40,7 @@ export const useAdminOrderStore = defineStore("admin-order", {
       }
     },
     async updateReview(order_id, rating) {
-      await axios.put("http://localhost:3000/update_review", {
+      await axios.put("https://ecommerce-backend-ig7w.onrender.com/update_review", {
         order_id,
         rating,
       });
@@ -49,7 +49,7 @@ export const useAdminOrderStore = defineStore("admin-order", {
     async get_status() {
       try {
         const results = await axios.post(
-          "http://localhost:3000/get_status",
+          "https://ecommerce-backend-ig7w.onrender.com/get_status",
           {},
           {
             headers: {
